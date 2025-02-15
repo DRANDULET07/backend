@@ -4,9 +4,13 @@ from .views import TodoViewSet
 from . import views
 
 router = DefaultRouter()
-router.register(r'todos', TodoViewSet)
+router.register(r"todos", TodoViewSet)
 
 urlpatterns = [
-    path('todos/create/', views.create_todo, name='create_todo'),
-    path('todos/<int:pk>/delete/', views.TodoViewSet.as_view({'delete': 'delete_todo'}), name='delete_todo'),
+    path("todos/create/", views.create_todo, name="create_todo"),
+    path(
+        "todos/<int:pk>/delete/",
+        views.TodoViewSet.as_view({"delete": "delete_todo"}),
+        name="delete_todo",
+    ),
 ]
