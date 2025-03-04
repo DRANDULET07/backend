@@ -1,0 +1,13 @@
+<!-- filepath: reservations/templates/reservations/user_reservations.html -->
+{% extends 'base.html' %}
+
+{% block title %}User Reservations{% endblock %}
+
+{% block content %}
+<h1>User Reservations</h1>
+<ul>
+    {% for reservation in reservations %}
+        <li>Reservation {{ reservation.id }} - Table: {{ reservation.table.number }} - Date: {{ reservation.date }} - Status: {{ reservation.status }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

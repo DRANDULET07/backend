@@ -1,0 +1,10 @@
+<!-- filepath: customers/templates/customers/customer_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}Customer Detail{% endblock %}
+
+{% block content %}
+<h1>Customer Detail</h1>
+<p>Name: {{ customer.name }}</p>
+<p>Phone: {{ customer.phone }}</p>
+{% endblock %}

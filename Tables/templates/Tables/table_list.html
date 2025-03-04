@@ -1,0 +1,19 @@
+<!-- filepath: Tables/templates/Tables/table_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Table List{% endblock %}
+
+{% block content %}
+<h1>Table List</h1>
+<ul>
+    {% for table in tables %}
+        <li>
+            Table {{ table.number }} - Seats: {{ table.seats }} - Available: {{ table.is_available }}
+            <a href="{% url 'table_detail' table.id %}" class="btn btn-info btn-sm">View</a>
+            <a href="{% url 'table_update' table.id %}" class="btn btn-warning btn-sm">Edit</a>
+            <a href="{% url 'table_delete' table.id %}" class="btn btn-danger btn-sm">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'table_create' %}" class="btn btn-primary">Add Table</a>
+{% endblock %}

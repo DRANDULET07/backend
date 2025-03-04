@@ -1,0 +1,14 @@
+<!-- filepath: customers/templates/customers/customer_confirm_delete.html -->
+{% extends 'base.html' %}
+
+{% block title %}Delete Customer{% endblock %}
+
+{% block content %}
+<h1>Delete Customer</h1>
+<p>Are you sure you want to delete this customer?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'customer_detail' customer.id %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

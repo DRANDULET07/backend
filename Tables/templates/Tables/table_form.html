@@ -1,0 +1,24 @@
+<!-- filepath: Tables/templates/Tables/table_form.html -->
+{% extends 'base.html' %}
+
+{% block title %}Update Table{% endblock %}
+
+{% block content %}
+<h1>Update Table</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="number">Number:</label>
+        <input type="number" class="form-control" id="number" name="number" value="{{ table.number }}" required>
+    </div>
+    <div class="form-group">
+        <label for="seats">Seats:</label>
+        <input type="number" class="form-control" id="seats" name="seats" value="{{ table.seats }}" required>
+    </div>
+    <div class="form-group">
+        <label for="is_available">Available:</label>
+        <input type="checkbox" class="form-control" id="is_available" name="is_available" {% if table.is_available %}checked{% endif %}>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

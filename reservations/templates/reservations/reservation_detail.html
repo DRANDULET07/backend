@@ -1,0 +1,12 @@
+<!-- filepath: reservations/templates/reservations/reservation_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}Reservation Detail{% endblock %}
+
+{% block content %}
+<h1>Reservation Detail</h1>
+<p>Customer: {{ reservation.customer.name }}</p>
+<p>Table: {{ reservation.table.number }}</p>
+<p>Date: {{ reservation.date }}</p>
+<p>Status: {{ reservation.status }}</p>
+{% endblock %}

@@ -1,0 +1,11 @@
+<!-- filepath: Tables/templates/Tables/table_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}Table Detail{% endblock %}
+
+{% block content %}
+<h1>Table Detail</h1>
+<p>Number: {{ table.number }}</p>
+<p>Seats: {{ table.seats }}</p>
+<p>Available: {{ table.is_available }}</p>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!-- filepath: reservations/templates/reservations/reservation_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Reservation List{% endblock %}
+
+{% block content %}
+<h1>Reservation List</h1>
+<ul>
+    {% for reservation in reservations %}
+        <li>
+            Reservation {{ reservation.id }} - Customer: {{ reservation.customer.name }} - Table: {{ reservation.table.number }} - Date: {{ reservation.date }} - Status: {{ reservation.status }}
+            <a href="{% url 'reservation_detail' reservation.id %}" class="btn btn-info btn-sm">View</a>
+            <a href="{% url 'reservation_update' reservation.id %}" class="btn btn-warning btn-sm">Edit</a>
+            <a href="{% url 'reservation_delete' reservation.id %}" class="btn btn-danger btn-sm">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'reservation_create' %}" class="btn btn-primary">Add Reservation</a>
+{% endblock %}
